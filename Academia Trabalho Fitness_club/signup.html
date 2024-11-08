@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscreva-se - Fitness Club</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+  
+        header {
+            background-color: #0d0d0d;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+    
+        .signup-section {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .signup-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+
+        #signup-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #signup-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+        }
+
+       
+        footer {
+            background-color: #0d0d0d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+      
+        @media (max-width: 768px) {
+            .signup-section h2 {
+                font-size: 28px;
+            }
+
+            #signup-form input {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+
+      
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Fitness Club</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index2.html">Início</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="signup" class="signup-section">
+        <div class="container">
+            <h2>Inscreva-se Hoje!</h2>
+            <form id="signup-form" action="register.php" method="POST" onsubmit="return validateForm()">
+                <input type="text" id="full-name" name="full-name" placeholder="Nome Completo" required>
+                <div id="name-error" class="error"></div>
+
+                <input type="email" id="signup-email" name="email" placeholder="Seu E-mail" required>
+                <div id="email-error" class="error"></div>
+
+                <input type="password" id="signup-password" name="password" placeholder="Senha" required>
+                <div id="password-error" class="error"></div>
+
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Verificação da Senha" required>
+                <div id="confirm-password-error" class="error"></div>
+
+                <input type="date" id="dob" name="dob" placeholder="Data de Nascimento" required>
+                <div id="dob-error" class="error"></div>
+
+                <input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx" required maxlength="15" oninput="formatPhone(this)">
+                <div id="phone-error" class="error"></div>
+
+                <button type="submit" class="btn">Inscreva-se Agora</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fitness Club. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+         
+            document.querySelectorAll('.error').forEach(function (error) {
+                error.innerText = '';
+            });
+
+           
+            const fullName = document.getElementById('full-name').value.trim();
+            if (fullName.length < 5) {
+                document.getElementById('name-error').innerText = 'O nome completo deve ter pelo menos 5 caracteres.';
+                isValid = false;
+            }
+
+         
+            const email = document.getElementById('signup-email').value.trim();
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                document.getElementById('email-error').innerText = 'Por favor, insira um e-mail válido.';
+                isValid = false;
+            }
+
+      
+            const password = document.getElementById('signup-password').value;
+            if (password.length < 6) {
+                document.getElementById('password-error').innerText = 'A senha deve ter pelo menos 6 caracteres.';
+                isValid = false;
+            }
+
+            
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error').innerText = 'As senhas não coincidem.';
+                isValid = false;
+            }
+
+          
+            const dob = document.getElementById('dob').value;
+            const today = new Date();
+            const birthDate = new Date(dob);
+            if (today.getFullYear() - birthDate.getFullYear() < 18) {
+                document.getElementById('dob-error').innerText = 'Você deve ter pelo menos 18 anos para se inscrever.';
+                isValid = false;
+            }
+
+           
+            const phone = document.getElementById('phone').value.replace(/\D/g, ''); 
+            if (phone.length < 10 || phone.length > 11) {
+                document.getElementById('phone-error').innerText = 'Por favor, insira um número de telefone válido (10 a 11 dígitos).';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+       
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, ''); 
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); 
+            value = value.replace(/(\d)(\d{4})$/, '$1-$2'); 
+            input.value = value;
+        }
+    </script>
+</body>
+</html>

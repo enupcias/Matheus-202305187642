@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Club - Bem-vindo</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd00;
+        }
+
+        /* Seção Hero */
+        .hero {
+            background: url('https://tm.ibxk.com.br/2024/02/28/28134128387194.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: #ffdd00;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .hero .btn:hover {
+            background-color: #ffc800;
+        }
+
+        /* Seção de Planos */
+        .plans {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .plan {
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            display: inline-block;
+            width: calc(25% - 40px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan h2 {
+            color: #007BFF;
+        }
+
+        .plan p {
+            margin: 5px 0;
+        }
+
+        .plan .signup-btn {
+            background-color: #ffdd00;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .plan .signup-btn:hover {
+            background-color: #ffc800;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Ajuste para dispositivos móveis */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero .btn {
+                padding: 10px 20px;
+            }
+
+            .plan {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plan {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Fitness Club</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="contact.html">Contato</a></li>
+                <li><a href="signup.html" class="signup-btn">Inscreva-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transforme Seu Corpo Conosco</h1>
+            <p>Entre para a nossa comunidade e alcance seu máximo potencial com o melhor ambiente de treino.</p>
+            <a href="signup.html" class="btn">Comece Agora</a>
+        </div>
+    </section>
+
+    <section class="plans">
+        <h2>Planos de Assinatura</h2>
+        <div class="plan">
+            <h2>🏋️‍♂️ Plano Básico</h2>
+            <p><strong>Mensalidade</strong></p>
+            <p><strong>Inclui</strong>:</p>
+            <ul>
+                <li>Acesso às instalações de treino</li>
+                <li>Participação em aulas de grupo (limitadas)</li>
+                <li>Uso de equipamentos padrão</li>
+            </ul>
+            <p><strong>Ideal para</strong>: Iniciantes que desejam experimentar o ambiente de treino.</p>
+            <a href="signup.html" class="signup-btn">R$ 99,00
+            </a>
+        </div>
+
+        <div class="plan">
+            <h2>🏆 Plano Avançado</h2>
+            <p><strong>Mensalidade</strong></p>
+            <p><strong>Inclui</strong>:</p>
+            <ul>
+                <li>Todos os benefícios do Plano Básico</li>
+                <li>Acesso ilimitado a aulas de grupo</li>
+                <li>Consulta com um personal trainer (1 vez por mês)</li>
+            </ul>
+            <p><strong>Ideal para</strong>:Pessoas que já têm alguma experiência e desejam se aprofundar.</p>
+            <a href="signup.html" class="signup-btn">R$ 149,00</a>
+        </div>
+
+        <div class="plan">
+            <h2>🌟 Plano Premium</h2>
+            <p><strong>Mensalidade</strong></p>
+            <p><strong>Inclui</strong>:</p>
+            <ul>
+                <li>Todos os benefícios do Plano Avançado</li>
+                <li>Acesso a áreas exclusivas (sauna, piscina)</li>
+                <li>Consultas mensais com um nutricionista</li>
+                <li>Treinos personalizados com um personal trainer</li>
+            </ul>
+            <p><strong>Ideal para</strong>: Aqueles que buscam uma experiência completa e personalizada.</p>
+            <a href="signup.html" class="signup-btn">R$ 199,00</a>
+        </div>
+
+        <div class="plan">
+            <h2>👨‍👩‍👧 Plano Familiar</h2>
+            <p><strong>Mensalidade</strong>:  (para até 4 membros da família)</p>
+            <p><strong>Inclui</strong>:</p>
+            <ul>
+                <li>Todos os benefícios do Plano Avançado</li>
+                <li>Acesso para todos os membros da família</li>
+                <li>Atividades especiais para crianças</li>
+            </ul>
+            <p><strong>Ideal para</strong>: Famílias que desejam se exercitar juntas.</p>
+            <a href="signup.html" class="signup-btn">R$ 349,00</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fitness Club. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

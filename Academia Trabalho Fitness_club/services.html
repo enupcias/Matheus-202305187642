@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços - Fitness Club</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho refinado */
+        header {
+            background-color: #0d0d0d;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* Seção de Serviços */
+        .services-section {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 5px solid #007BFF;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Adicionando margem superior */
+            margin-bottom: 20px; /* Adicionando margem inferior */
+        }
+
+        .services-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .service p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service .icon {
+            font-size: 40px;
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        /* Rodapé refinado */
+        footer {
+            background-color: #0d0d0d;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .services-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .services-section h2 {
+                font-size: 28px;
+            }
+
+            .service h3 {
+                font-size: 22px;
+            }
+
+            .service p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Fitness Club</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index2.html">Início</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="contact.html">Contato</a></li>
+                <li><a href="signup.html" class="signup-btn">Inscreva-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <div class="icon">🏋️‍♂️</div>
+                    <h3>Treinamento Personalizado</h3>
+                    <p>Nossos treinadores certificados criarão planos de treino personalizados, adaptados aos seus objetivos.</p>
+                </div>
+                <div class="service">
+                    <div class="icon">👥</div>
+                    <h3>Aulas em Grupo</h3>
+                    <p>Participe das nossas animadas e energéticas aulas em grupo, desde yoga até treinos de alta intensidade.</p>
+                </div>
+                <div class="service">
+                    <div class="icon">🥗</div>
+                    <h3>Planos Nutricionais</h3>
+                    <p>Receba conselhos nutricionais personalizados para apoiar sua jornada fitness e alcançar melhores resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fitness Club. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
